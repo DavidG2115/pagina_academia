@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicia secion</title>
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" />
+</head>
+
+
+
+<body style="background-color: #293d7a;">
+
+
+    <main class="flex-shrink-0">
+
+        <!-- Nav-bar-->
+        <nav class="navbar navbar-expand-lg navbar-dark" id="nav_bar">
+            <div class="container px-5">
+                <a class="navbar-brand text-warning" href="/">Academia de Emprendimiento</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation"><span
+                        class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="/">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/about">Nosotros</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/course">Cursos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/faq">FAQ</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/contact">Contacto</a></li>
+                        <li class="nav-item btn btn-primary p-0 m-lg-1"><a class="nav-link" href="/loging">Ingresa</a>
+                        </li>
+                        <li class="nav-item btn btn-primary p-0 m-lg-1"><a class="nav-link"
+                                href="/registro">Registrate</a>
+                        </li>
+
+                    </ul>   
+                </div>
+            </div>
+        </nav>
+        <!-- Nav-bar-->
+
+
+
+
+        <section class="d-flex flex-colum min-vh-100 justify-content-center align-items-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10 mx-auto rounded shadow bg-white">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="m-5 text-center">
+                                    <h1>Bienvenido</h1>
+                                </div>
+                                <!-- Form -->
+                                {{error}}
+                                <form class="form m-5" action="/loging/" method="POST">
+                                    {% csrf_token %}
+
+                                    <div class="mb-4">
+                                        <input type="text" class="form-control" name="username" id=""
+                                            placeholder="Usuario">
+                                    </div>
+                                    <div class="mb-4">
+                                        <input type="password" class="form-control" name="password" id=""
+                                            placeholder="Contraseña">
+                                    </div>
+
+                                    <div class="d-grid">
+                                        <button type="submit" class="btn btn-primary">Iniciar</button>
+                                    </div>
+                                    <div class="d-grid my-3">
+                                        <span class="my-3 "><a href="/registro">Registrate</a></span>
+                                        <span class="my-1"><a href="#">Recuperar Contraseña</a></span>
+
+                                    </div>
+                                </form>
+                                <!-- <div class="container w-100 my-5">
+                                <div class="row text-center">
+                                    <div class="col-12"> Inicia sesión con:</div>
+                                </div>
+                                <div class="row my-3">
+                                    <div class="col">
+                                        <button class="btn btn-outline-primary w-100 my-1">
+                                            <div class="row align-items-center">
+                                                <div class="col-2">
+                                                    <img src="{% static 'img/logo_facebook.png' %}" width="32">
+                                                </div>
+            
+                                                <div class="col-10 text-center">
+                                                    Facebook
+                                                </div>
+                                            </div>
+                                        </button>
+                                    </div>
+            
+                                    <div class="col">
+                                        <button class="btn btn-outline-danger w-100 my-1">
+                                            <div class="row align-items-center">
+                                                <div class="col-2">
+                                                    <img src="{% static 'img/logo_go.png' %}" width="32">
+                                                </div>
+            
+                                                <div class="col-10 text-center">
+                                                    Facebook
+                                                </div>
+                                            </div>
+                                    </div>
+                                </div>
+            
+                            </div> -->
+                            </div>
+                            <div class="col-md-6">
+                                <div>
+                                    <img src="{% static 'image/login.svg' %}" width="" class=" img-fluid p-5"
+                                        alt="login">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+</body>
+
+</html>
