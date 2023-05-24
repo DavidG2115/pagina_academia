@@ -60,15 +60,11 @@
                     <div class="col-md-6 rounded-4 d-flex justify-content-center align-items-center flex-column left-box"
                         style="background: #103cbe;">
                         <div class="featured-image mb-3">
-                            <img src="images/1.png" class="img-fluid" style="width: 250px;">
+                            <img src="{% static 'image/loging.jpg' %}" class="img-fluid" style="width: 250px;">
                         </div>
                         <p class="text-white fs-2"
-                            style="font-family: 'Courier New', Courier, monospace; font-weight: 600;">Be
-                            Verified</p>
-                        <small class="text-white text-wrap text-center"
-                            style="width: 17rem;font-family: 'Courier New', Courier, monospace;">Join experienced
-                            Designers on
-                            this platform.</small>
+                            style="font-family: 'Courier New', Courier, monospace; font-weight: 600; text-align: center;">Convierte tus ideas en realidad</p>
+                        
                     </div>
 
                     <!-------------------- ------ Right Box ---------------------------->
@@ -79,7 +75,10 @@
                                 <h2>Hola</h2>
                                 <p>Estamos contentos de verte de nuevo.</p>
                             </div>
-                            {{error}}
+                            <div class="mb-4">
+                                
+                            <h3 class="text-center">{{error}}</h3>
+                            </div>
                             <form class="" action="/loging/" method="POST">
                                 {% csrf_token %}
 
@@ -109,11 +108,7 @@
 
                 </div>
             </div>
-
-
-
-
-
+            <!----------------------- Main Container -------------------------->
     </main>
 
 </body>

@@ -7,18 +7,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro</title>
+    <title>Inicia secion</title>
     <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" /> 
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/loging.css' %}" rel="stylesheet" />
 </head>
 
-<body style="background-color: #293d7a;">
 
-    
+
+<body >
+
+
     <main class="flex-shrink-0">
 
-         <!-- Nav-bar-->
-         <nav class="navbar navbar-expand-lg navbar-dark" id="nav_bar">
+        <!-- Nav-bar-->
+        <nav class="navbar navbar-expand-lg navbar-dark" id="nav_bar">
             <div class="container px-5">
                 <a class="navbar-brand text-warning" href="/">Academia de Emprendimiento</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -44,90 +47,77 @@
         </nav>
         <!-- Nav-bar-->
 
-    <!-- {{error}} -->
-    <section class="d-flex flex-colum min-vh-100 justify-content-center align-items-center">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-10 mx-auto rounded shadow bg-white">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="m-5 text-center">
-                                <h1>Registrate</h1>
-                            </div>
-                            <!-- Form -->
-                            <div class="mb-4">
-                                <h3 class=" text-center"> {{error}}</h3>
-                            </div>
-                            <form class="form m-5" action="/registro/" method="POST">
-                                {% csrf_token %}
+        <!----------------------- Main Container -------------------------->
 
-                                <div class="mb-4">
-                                    <input type="text" class="form-control" name="username" maxlength="20" autocapitalize="none" autocomplete="username" autofocus="" required="" id="id_username" placeholder="Usuario">
+        <div class="container d-flex justify-content-center align-items-center min-vh-100">
 
-                                </div>
-                                <div class="mb-4">
-                                    <input type="password" class="form-control" name="password1" autocomplete="new-password" required="" id="id_password1" placeholder="Contraseña">
-                                </div>
-                                
-                                <div class="mb-4">
-                                    <input type="password" class="form-control" name="password2" autocomplete="new-password" required="" id="id_password2" placeholder="Introduce nuevamente la contraseña">
-                                </div>
+            <!----------------------- Login Container -------------------------->
 
-                                <div class="d-grid my-3">
-                                    <button class="btn btn-primary">Registrate</button>
-                                    
+            <div class="row border rounded-5 p-3 bg-white shadow box-area">
 
-                                </div>
-                            </form>
-                            <div class="container w-100 my-3">
-                                <div class="row text-center">
-                                    <div class="col-12"> 
-                                        <a class="" href="/login">Ya tengo cuenta</a>
-                                    </div>
-                                </div>
-                                <!-- <div class="row my-3">
-                                    <div class="col">
-                                        <button class="btn btn-outline-primary w-100 my-1">
-                                            <div class="row align-items-center">
-                                                <div class="col-2">
-                                                    <img src="{% static 'img/logo_facebook.png' %}" width="32">
-                                                </div>
-            
-                                                <div class="col-10 text-center">
-                                                    Facebook
-                                                </div>
-                                            </div>
-                                        </button>
-                                    </div>
-            
-                                    <div class="col">
-                                        <button class="btn btn-outline-danger w-100 my-1">
-                                            <div class="row align-items-center">
-                                                <div class="col-2">
-                                                    <img src="{% static 'img/logo_go.png' %}" width="32">
-                                                </div>
-            
-                                                <div class="col-10 text-center">
-                                                    Facebook
-                                                </div>
-                                            </div>
-                                    </div>
-                                </div> -->
-            
-                            </div>
+                <!--------------------------- Left Box ----------------------------->
+                <div class="col-md-6 right-box">
+                    <div class="row align-items-center">
+                        <div class="header-text mb-4">
+                            <h2>Hola</h2>
+                            <p>Estas a un paso de tener la mejor asesoria.</p>
                         </div>
-                        <div class="col-md-6">
-                            <div>
-                                <img src="{% static 'image/login.svg' %} " width="" class=" img-fluid p-5" alt="login">
-                            </div>
+
+                        <div class="mb-4">
+                            <h3 class=" text-center"> {{error}}</h3>
                         </div>
+                        <form class="" action="/registro/" method="POST">
+                            {% csrf_token %}
+
+                            <div class="mb-3">
+                                <input type="text" class="form-control form-control-lg bg-light fs-6" name="username"
+                                    maxlength="20" autocapitalize="none" autocomplete="username" autofocus=""
+                                    required="" id="id_username" placeholder="Usuario">
+                            </div>
+                            <div class="mb-3">
+                                <input type="password" class="form-control form-control-lg bg-light fs-6"
+                                    name="password1" autocomplete="new-password" required="" id="id_password1"
+                                    placeholder="Contraseña">
+                            </div>
+                            <div class="mb-3">
+                                <input type="password" class="form-control form-control-lg bg-light fs-6"
+                                    autocomplete="new-password" required="" id="id_password2" name="password2"
+                                    placeholder=" Confirmar Contraseña">
+                            </div>
+                           
+                            <div class="input-group mb-3">
+                                <button type="submit" class="btn btn-lg btn-primary w-100 fs-6">Ingresar</button>
+                            </div>
+
+                            <div class="row">
+                                <small>Ya tienes cuenta? <a class="link-primary" href="/loging">Iniciar sesion</a></small>
+                            </div>
+                        </form>
                     </div>
-
                 </div>
+
+
+                <!-------------------- ------ Right Box ---------------------------->
+
+
+                <div class="col-md-6 rounded-4 d-flex justify-content-center align-items-center flex-column left-box"
+                    style="background: #103cbe;">
+                    <div class="featured-image mb-3">
+                        <img src="{% static 'image/loging.jpg' %}" class="img-fluid" style="width: 250px;">
+                    </div>
+                    <p class="text-white fs-2 text-center"
+                        style="font-family: 'Courier New', Courier, monospace; font-weight: 600;">Construye tu futuro emprendedor</p>
+                    <!-- <small class="text-white text-wrap text-center"
+                        style="width: 17rem;font-family: 'Courier New', Courier, monospace;">Join experienced
+                        Designers on
+                        this platform.</small> -->
+                </div>
+
             </div>
         </div>
-    </section>
-</main>
+        <!----------------------- Main Container -------------------------->
+    </main>
 
 </body>
+
 </html>
